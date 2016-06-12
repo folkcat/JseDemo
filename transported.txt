@@ -1,0 +1,433 @@
+/*
+MySQL Data Transfer
+Source Host: localhost
+Source Database: cs
+Target Host: localhost
+Target Database: cs
+Date: 2016/6/10 13:50:36
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+-- ----------------------------
+-- Table structure for cs_graduationproject
+-- ----------------------------
+CREATE TABLE `cs_graduationproject` (
+  `SNO` varchar(20) DEFAULT NULL COMMENT '学号',
+  `SN` varchar(45) DEFAULT NULL COMMENT '姓名',
+  `Thesis` varchar(200) DEFAULT NULL COMMENT '毕设题目',
+  `First` varchar(45) DEFAULT NULL COMMENT '一辩成绩',
+  `Reply` varchar(45) DEFAULT NULL COMMENT '二辩成绩',
+  `Final` varchar(45) DEFAULT NULL COMMENT '最终成绩',
+  `TNO` varchar(45) DEFAULT NULL COMMENT '教师号',
+  `PROF` varchar(45) DEFAULT NULL COMMENT '教师职称'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='毕业设计表';
+
+-- ----------------------------
+-- Table structure for cs_student
+-- ----------------------------
+CREATE TABLE `cs_student` (
+  `SNO` varchar(20) NOT NULL COMMENT '学号',
+  `SN` varchar(45) DEFAULT NULL COMMENT '学生姓名',
+  `Grade` varchar(45) DEFAULT NULL COMMENT '年级',
+  `SC` varchar(45) DEFAULT NULL COMMENT '学生班级',
+  PRIMARY KEY (`SNO`),
+  KEY `SNO` (`SNO`,`SN`,`Grade`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='学生表';
+
+-- ----------------------------
+-- Table structure for cs_teacher
+-- ----------------------------
+CREATE TABLE `cs_teacher` (
+  `TNO` varchar(45) NOT NULL COMMENT '教师号',
+  `TN` varchar(20) NOT NULL COMMENT '教师姓名',
+  `PROF` varchar(45) DEFAULT NULL COMMENT '教师职称',
+  PRIMARY KEY (`TNO`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='教师表';
+
+-- ----------------------------
+-- Table structure for cs_test
+-- ----------------------------
+CREATE TABLE `cs_test` (
+  `TNO` varchar(20) NOT NULL COMMENT '老师姓名'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='试卷表';
+
+-- ----------------------------
+-- Records 
+-- ----------------------------
+INSERT INTO `cs_graduationproject` VALUES ('1207012101', '曹奕铖', '食品X光图像中的杂质检测算法研究与实现', null, null, null, '洪朝群', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012102', '陈皓伟', '万翔网商会员积分管理系统', null, null, null, '周明', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012103', '陈凌宇', '基于微信平台的汽车跟踪系统设计', null, null, null, '王晓栋', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012104', '陈铭超', '基于多因素的摩托车零配件价格调节系统设计', null, null, null, '李远敏', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012105', '陈婷', '基于halcon的设备缺陷检测方法分析与应用', null, null, null, '王晓栋', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012106', '陈晓琴', '公交WIFI系统的设计与实现', null, null, null, '郭迪', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012108', '陈艳蓝', '面向保险应用的报表系统设计与实现', null, null, null, '王晓栋', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012109', '陈志鹏', '基于多线程的嵌入式喷码机控制程序的研发', null, null, null, '许高攀', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012111', '戴黎明', '基于SIP的VOIP终端设计与实现', null, null, null, '吴克寿', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012112', '邓小霞', '面向多目标移动侦测的视频监控系统设计', null, null, null, '王晓栋', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012113', '冯康', '快速公交非对称发车间隔调度算法研究', null, null, null, '黎斌', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012114', '高毅峰', '在线预订运动场地的移动APP(手机端)实现', null, null, null, '许高攀', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012115', '龚根意', '手机安全卫士的设计与实现', null, null, null, '黄鹏程', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012116', '黄进福', '智运动之拜师学艺模块的设计与实现', null, null, null, '黄鹏程', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012117', '黄明', '兆翔机务维修管理系统之人员档案子系统', null, null, null, '周明', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012118', '黄青山', '基于安卓系统的新闻客户端的设计与实现', null, null, null, '黄鹏程', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012119', '黄毅', '短信智能管理APP的设计与实现', null, null, null, '黄鹏程', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012120', '李梅玲', '基于数据交换平台的多系统信息资源管理的设计与实现', null, null, null, '刘丽娟', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012121', '李姝融', '兆翔机务维修系统之安全体系管理子系统', null, null, null, '周明', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012122', '林金汉', '基于STM32的渔船进出港管理系统（基站）', null, null, null, '曾志强', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012123', '林靖', '基于安卓平台的智能课表应用设计与开发', null, null, null, '洪朝群', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012124', '林小强', '基于物联网和开源硬件平台的家庭健康跟踪系统', null, null, null, '谢勇', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012125', '林真月', '视频监控系统中的物体语义分割方法研究与实现', null, null, null, '洪朝群', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012126', '林志伟', '基于PHP的智慧社区平台的设计与实现', null, null, null, '张念', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012127', '刘海华', '基于stm32和ld3320智能家居信息采集及处理系统设计与实现', null, null, null, '李远敏', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012129', '柳旭辉', '基于Android和驾驶行为分析的驾驶安全提升APP开发', null, null, null, '谢勇', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012130', '吕丹妮', '基于B2C模式的互联网电商口碑微商城平台设计与研发', null, null, null, '张念', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012131', '吕木瓜', '基于Redis高速缓存的航班调度系统', null, null, null, '周明', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012132', '马志辉', '智慧旅游景点信息全景展示平台的设计与实现', null, null, null, '刘丽娟', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012134', '阮钧晖', '兆翔监护排班管理系统', null, null, null, '周明', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012135', '沈俊雄', '基于DirectX的2D游戏设计与开发', null, null, null, '洪朝群', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012136', '石磊', '点菜系统的设计与实现', null, null, null, '黄鹏程', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012137', '孙河阳', '掌上商城商品展示与支付模块的设计与实现', null, null, null, '黄鹏程', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012138', '王梓钧', '基于树莓派的航班行李信息采集系统', null, null, null, '谢勇', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012140', '巫晓麒', '掌上商城交易模块的设计与实现', null, null, null, '黄鹏程', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012142', '吴一军', '机坪移动应用系统之危险源报告子系统', null, null, null, '吴克寿', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012143', '严杭', '喷码机管理系统的研发', null, null, null, '谢荣生', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012144', '杨德正', '基于cocos2d的音乐节奏游戏开发', null, null, null, '黎斌', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012145', '杨柳辉', '基于opencv设备检测与定位系统设计', null, null, null, '王晓栋', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012146', '叶苗地', '物联网温室大棚监测控制系统的研发', null, null, null, '许高攀', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012147', '游千炜', '基于halcon的设备缺料检测系统设计', null, null, null, '王晓栋', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012148', '曾焕龙', '兆翔多机场服务器监控报警系统', null, null, null, '吴克寿', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012149', '曾育志', '机坪移动应用系统之航班动态查询及保障任务反馈子系统', null, null, null, '吴克寿', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012152', '张琪', '基于深度学习的多模态人脸识别方法研究与实现', null, null, null, '洪朝群', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012153', '周锦杨', '基于stm32和ld3320智能家居语音控制系统开发', null, null, null, '李远敏', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012154', '卓杰鑫', '在线预订运动场地的移动APP(手机端)实现', null, null, null, '许高攀', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012202', '陈碧伟', '基于Android的梯口机交互系统设计与研发', null, null, null, '张念', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012203', '陈彩莲', 'ARQ项目管理系统设计与实现', null, null, null, '李远敏', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012205', '陈福来', '基于机器视觉的PCB板故障检测', null, null, null, '谢荣生', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012206', '陈辉阳', '基于QT的图像拼接处理系统（通信协议）的研发', null, null, null, '许高攀', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012207', '陈小震', '基于数据交换平台的不同操作系统服务器硬件资源监控的设计与实现', null, null, null, '刘丽娟', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012209', '陈垠芬', '自适应颜色属性的视频目标跟踪方法研究与实现', null, null, null, '洪朝群', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012210', '陈智亨', '基于Android的球类战术交互系统设计与实现', null, null, null, '杜晓凤', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012211', '程浩', '基于人脸的远程驾驶疲劳检测系统', null, null, null, '许华荣', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012212', '韩飞', '基于Arduino单片机的倒车雷达系统', null, null, null, '曾志强', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012213', '何宁宁', '产品成本管理系统的设计与开发', null, null, null, '李远敏', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012214', '何少杰', '智能音乐播放器的设计和实现', null, null, null, '谢勇', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012215', '何振强', '基于web端文档管理系统研究与开发', null, null, null, '陈旭辉', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012216', '洪培林', '基于Android的订餐APP的设计与实现', null, null, null, '陈旭辉', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012217', '黄堡钦', '基于iOS的课件分享程序设计与研发', null, null, null, '张念', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012218', '黄立平', '智能冷库出入库管理的设计与实现', null, null, null, '温玄', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012219', '黄巧玲', '基于ar9344的4G-wifi路由器设计与实现', null, null, null, '戴彬', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012220', '康江彬', '冷库进出货品财务管理的设计与实现', null, null, null, '温玄', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012221', '李宇聪', '基于Arduino单片机的智能家居应用系统', null, null, null, '曾志强', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012222', '李智帆', '基于QT的拼接处理器控制系统的研发', null, null, null, '许高攀', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012223', '林增杰', '基于Android的手机门铃系统设计与研发', null, null, null, '张念', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012224', '刘权', '智慧旅游景区交通信息展示平台的设计与实现', null, null, null, '刘丽娟', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012225', '柳劲', '基于数据交换平台的不同数据库管理系统的数据管理的设计与实现', null, null, null, '刘丽娟', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012226', '柳志军', '基于人脸检测的二代身份证采集系统开发', null, null, null, '杜晓凤', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012227', '彭明景', '基于移动终端传感控制的飞鸟游戏开发', null, null, null, '黎斌', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012229', '施鸿锴', '基于WPF产品数据管理系统开发', null, null, null, '陈旭辉', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012230', '王才林', '基于VC的文件加密解密系统的实现', null, null, null, '许高攀', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012231', '王晓', '基于halcon的摄像机标定与测量系统设计', null, null, null, '王晓栋', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012232', '王一阳', '安卓平台手机助手的设计与实现', null, null, null, '陈旭辉', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012233', '吴俊杰', '基于自然语言识别的智能对答陪聊系统', null, null, null, '曾志强', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012234', '吴燕芳', '面向摩托车经销商销售管理系统开发', null, null, null, '陈旭辉', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012235', '肖水美', '基于IOS的智能门禁系统设计与研发', null, null, null, '张念', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012236', '谢雪白', '远程视频监控传输系统的设计与实现', null, null, null, '洪朝群', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012237', '熊博晨', '基于MWC平台的四轴飞行器的设计与实现', null, null, null, '谢勇', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012238', '徐龙', '微信点餐系统', null, null, null, '谢荣生', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012239', '许冬梅', '基于php的社交网站设计与实现', null, null, null, '崔建峰', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012240', '薛乃僮', '基于数据交换平台的多系统用户管理的设计与实现', null, null, null, '刘丽娟', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012241', '薛鑫炜', '嵌入式防伪QR二维条码电子票应用系统', null, null, null, '谢荣生', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012242', '杨丽君', '佰翔集团竞赛系统', null, null, null, '周明', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012243', '尹凤', '基于移动终端传感控制的打飞机游戏开发', null, null, null, '黎斌', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012244', '余合', '基于微信的智能停车饧', null, null, null, '谢荣生', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012245', '曾良伟', '基于XMPP的机场IM消息服务器', null, null, null, '周明', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012246', '张光昭', '基于unity3D引擎的2D宠物养成游戏设计', null, null, null, '黄鹏程', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012247', '张宁', '基于安卓的公司内部交互系统开发', null, null, null, '黎斌', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012248', '张志阳', '基于STM32的渔船进出港管理系统（基站）', null, null, null, '曾志强', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012249', '章浩', '基于Android的运动约战平台的设计与实现', null, null, null, '张念', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012251', '郑骋', '基于arduino平台的智能避障车研究和开发', null, null, null, '李远敏', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012252', '郑平平', '远程农田浇水系统', null, null, null, '许华荣', null);
+INSERT INTO `cs_graduationproject` VALUES ('1207012253', '钟韬玉', '快速公交仿真软件的设计与实现', null, null, null, '黎斌', null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '73.8', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '72', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76.4', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76.3', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '80', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '75', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '79', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '66', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '60', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '79.8', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '72.8', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '73', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '90.2', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '67', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '72.2', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '62', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '83', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '74.2', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '74.7', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '79', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '66.6', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '71.2', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '46.6', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '81.8', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '84.8', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76.4', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '80', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '90', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '68', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '82', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '71', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '85', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '62', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '78', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '87', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '68', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '74', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '81.5', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '72', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76.6', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '54.2', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '74', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '72', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '64', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '56', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '71', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '48', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '84.2', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '90.4', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '80', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '66.5', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '66', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '71', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '79.4', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '73', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '81', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '68.8', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '83.4', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '69', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '65', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '77', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '72', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '72', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '90', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '92', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '78', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '82', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '75', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '73.4', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '87', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '75.4', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '65', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76.4', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '85', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '67', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '70.2', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '70', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '79', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '80', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '79.8', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '52.4', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '64', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '75.8', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '53.8', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '85', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '82', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '81', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '93', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '79.1', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '73.8', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '72', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76.4', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76.3', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '80', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '75', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '79', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '66', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '60', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '79.8', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '72.8', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '73', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '90.2', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '67', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '72.2', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '62', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '83', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '74.2', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '74.7', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '79', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '66.6', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '71.2', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '46.6', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '81.8', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '84.8', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76.4', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '80', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '90', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '68', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '82', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '71', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '85', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '62', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '78', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '87', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '68', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '74', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '81.5', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '72', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76.6', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '54.2', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '74', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '72', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '64', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '56', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '71', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '48', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '84.2', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '90.4', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '80', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '66.5', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '66', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '71', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '79.4', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '73', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '81', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '68.8', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '83.4', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '69', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '65', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '77', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '72', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '72', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '90', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '92', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '78', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '82', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '75', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '73.4', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '87', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '75.4', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '65', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '76.4', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '85', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '67', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '70.2', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '70', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '79', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '80', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '79.8', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '52.4', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '64', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '75.8', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '53.8', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '85', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '82', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '81', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '93', null, null, null, null);
+INSERT INTO `cs_graduationproject` VALUES (null, null, null, '79.1', null, null, null, null);
+INSERT INTO `cs_student` VALUES ('1207012101', '曹奕铖', null, null);
+INSERT INTO `cs_student` VALUES ('1207012102', '陈皓伟', null, null);
+INSERT INTO `cs_student` VALUES ('1207012103', '陈凌宇', null, null);
+INSERT INTO `cs_student` VALUES ('1207012104', '陈铭超', null, null);
+INSERT INTO `cs_student` VALUES ('1207012105', '陈婷', null, null);
+INSERT INTO `cs_student` VALUES ('1207012106', '陈晓琴', null, null);
+INSERT INTO `cs_student` VALUES ('1207012108', '陈艳蓝', null, null);
+INSERT INTO `cs_student` VALUES ('1207012109', '陈志鹏', null, null);
+INSERT INTO `cs_student` VALUES ('1207012111', '戴黎明', null, null);
+INSERT INTO `cs_student` VALUES ('1207012112', '邓小霞', null, null);
+INSERT INTO `cs_student` VALUES ('1207012113', '冯康', null, null);
+INSERT INTO `cs_student` VALUES ('1207012114', '高毅峰', null, null);
+INSERT INTO `cs_student` VALUES ('1207012115', '龚根意', null, null);
+INSERT INTO `cs_student` VALUES ('1207012116', '黄进福', null, null);
+INSERT INTO `cs_student` VALUES ('1207012117', '黄明', null, null);
+INSERT INTO `cs_student` VALUES ('1207012118', '黄青山', null, null);
+INSERT INTO `cs_student` VALUES ('1207012119', '黄毅', null, null);
+INSERT INTO `cs_student` VALUES ('1207012120', '李梅玲', null, null);
+INSERT INTO `cs_student` VALUES ('1207012121', '李姝融', null, null);
+INSERT INTO `cs_student` VALUES ('1207012122', '林金汉', null, null);
+INSERT INTO `cs_student` VALUES ('1207012123', '林靖', null, null);
+INSERT INTO `cs_student` VALUES ('1207012124', '林小强', null, null);
+INSERT INTO `cs_student` VALUES ('1207012125', '林真月', null, null);
+INSERT INTO `cs_student` VALUES ('1207012126', '林志伟', null, null);
+INSERT INTO `cs_student` VALUES ('1207012127', '刘海华', null, null);
+INSERT INTO `cs_student` VALUES ('1207012129', '柳旭辉', null, null);
+INSERT INTO `cs_student` VALUES ('1207012130', '吕丹妮', null, null);
+INSERT INTO `cs_student` VALUES ('1207012131', '吕木瓜', null, null);
+INSERT INTO `cs_student` VALUES ('1207012132', '马志辉', null, null);
+INSERT INTO `cs_student` VALUES ('1207012134', '阮钧晖', null, null);
+INSERT INTO `cs_student` VALUES ('1207012135', '沈俊雄', null, null);
+INSERT INTO `cs_student` VALUES ('1207012136', '石磊', null, null);
+INSERT INTO `cs_student` VALUES ('1207012137', '孙河阳', null, null);
+INSERT INTO `cs_student` VALUES ('1207012138', '王梓钧', null, null);
+INSERT INTO `cs_student` VALUES ('1207012140', '巫晓麒', null, null);
+INSERT INTO `cs_student` VALUES ('1207012142', '吴一军', null, null);
+INSERT INTO `cs_student` VALUES ('1207012143', '严杭', null, null);
+INSERT INTO `cs_student` VALUES ('1207012144', '杨德正', null, null);
+INSERT INTO `cs_student` VALUES ('1207012145', '杨柳辉', null, null);
+INSERT INTO `cs_student` VALUES ('1207012146', '叶苗地', null, null);
+INSERT INTO `cs_student` VALUES ('1207012147', '游千炜', null, null);
+INSERT INTO `cs_student` VALUES ('1207012148', '曾焕龙', null, null);
+INSERT INTO `cs_student` VALUES ('1207012149', '曾育志', null, null);
+INSERT INTO `cs_student` VALUES ('1207012152', '张琪', null, null);
+INSERT INTO `cs_student` VALUES ('1207012153', '周锦杨', null, null);
+INSERT INTO `cs_student` VALUES ('1207012154', '卓杰鑫', null, null);
+INSERT INTO `cs_student` VALUES ('1207012202', '陈碧伟', null, null);
+INSERT INTO `cs_student` VALUES ('1207012203', '陈彩莲', null, null);
+INSERT INTO `cs_student` VALUES ('1207012205', '陈福来', null, null);
+INSERT INTO `cs_student` VALUES ('1207012206', '陈辉阳', null, null);
+INSERT INTO `cs_student` VALUES ('1207012207', '陈小震', null, null);
+INSERT INTO `cs_student` VALUES ('1207012209', '陈垠芬', null, null);
+INSERT INTO `cs_student` VALUES ('1207012210', '陈智亨', null, null);
+INSERT INTO `cs_student` VALUES ('1207012211', '程浩', null, null);
+INSERT INTO `cs_student` VALUES ('1207012212', '韩飞', null, null);
+INSERT INTO `cs_student` VALUES ('1207012213', '何宁宁', null, null);
+INSERT INTO `cs_student` VALUES ('1207012214', '何少杰', null, null);
+INSERT INTO `cs_student` VALUES ('1207012215', '何振强', null, null);
+INSERT INTO `cs_student` VALUES ('1207012216', '洪培林', null, null);
+INSERT INTO `cs_student` VALUES ('1207012217', '黄堡钦', null, null);
+INSERT INTO `cs_student` VALUES ('1207012218', '黄立平', null, null);
+INSERT INTO `cs_student` VALUES ('1207012219', '黄巧玲', null, null);
+INSERT INTO `cs_student` VALUES ('1207012220', '康江彬', null, null);
+INSERT INTO `cs_student` VALUES ('1207012221', '李宇聪', null, null);
+INSERT INTO `cs_student` VALUES ('1207012222', '李智帆', null, null);
+INSERT INTO `cs_student` VALUES ('1207012223', '林增杰', null, null);
+INSERT INTO `cs_student` VALUES ('1207012224', '刘权', null, null);
+INSERT INTO `cs_student` VALUES ('1207012225', '柳劲', null, null);
+INSERT INTO `cs_student` VALUES ('1207012226', '柳志军', null, null);
+INSERT INTO `cs_student` VALUES ('1207012227', '彭明景', null, null);
+INSERT INTO `cs_student` VALUES ('1207012229', '施鸿锴', null, null);
+INSERT INTO `cs_student` VALUES ('1207012230', '王才林', null, null);
+INSERT INTO `cs_student` VALUES ('1207012231', '王晓', null, null);
+INSERT INTO `cs_student` VALUES ('1207012232', '王一阳', null, null);
+INSERT INTO `cs_student` VALUES ('1207012233', '吴俊杰', null, null);
+INSERT INTO `cs_student` VALUES ('1207012234', '吴燕芳', null, null);
+INSERT INTO `cs_student` VALUES ('1207012235', '肖水美', null, null);
+INSERT INTO `cs_student` VALUES ('1207012236', '谢雪白', null, null);
+INSERT INTO `cs_student` VALUES ('1207012237', '熊博晨', null, null);
+INSERT INTO `cs_student` VALUES ('1207012238', '徐龙', null, null);
+INSERT INTO `cs_student` VALUES ('1207012239', '许冬梅', null, null);
+INSERT INTO `cs_student` VALUES ('1207012240', '薛乃僮', null, null);
+INSERT INTO `cs_student` VALUES ('1207012241', '薛鑫炜', null, null);
+INSERT INTO `cs_student` VALUES ('1207012242', '杨丽君', null, null);
+INSERT INTO `cs_student` VALUES ('1207012243', '尹凤', null, null);
+INSERT INTO `cs_student` VALUES ('1207012244', '余合', null, null);
+INSERT INTO `cs_student` VALUES ('1207012245', '曾良伟', null, null);
+INSERT INTO `cs_student` VALUES ('1207012246', '张光昭', null, null);
+INSERT INTO `cs_student` VALUES ('1207012247', '张宁', null, null);
+INSERT INTO `cs_student` VALUES ('1207012248', '张志阳', null, null);
+INSERT INTO `cs_student` VALUES ('1207012249', '章浩', null, null);
+INSERT INTO `cs_student` VALUES ('1207012251', '郑骋', null, null);
+INSERT INTO `cs_student` VALUES ('1207012252', '郑平平', null, null);
+INSERT INTO `cs_student` VALUES ('1207012253', '钟韬玉', null, null);
+INSERT INTO `cs_student` VALUES ('学号', '姓名', null, null);

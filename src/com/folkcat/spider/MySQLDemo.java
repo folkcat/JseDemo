@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class ConnectMySQL {
+public class MySQLDemo {
 	public static void main(String[] args) throws Exception {
 		Connection conn = null;
 		String sql;
