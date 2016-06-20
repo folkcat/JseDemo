@@ -1,4 +1,4 @@
-package com.folkcat.demos.udp;
+package com.folkcat.demos.udptransfile;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,7 +13,7 @@ import java.util.Vector;
 public class Sender {
 
 	public static void main(String args[]) throws Exception {
-		// Get the address, port and name of file to send over UDP
+		// 获取 目标主机IP、端口、要上传的文件路径
 		final String hostName = args[0];
 		final int port = Integer.parseInt(args[1]);
 		final String fileName = args[2];
@@ -25,33 +25,27 @@ public class Sender {
 			String fileName) throws IOException {
 		System.out.println("Sending the file");
 
-		// Create the socket, set the address and create the file to be
-		// sent
+		// 创建Socket
 		DatagramSocket socket = new DatagramSocket();
 		InetAddress address = InetAddress.getByName(hostName);
 		File file = new File(fileName);
 
-		// Create a byte array to store the filestream
+		// 存储文件的字节数组
 		InputStream inFromFile = new FileInputStream(file);
 		byte[] fileByteArray = new byte[(int) file.length()];
 		inFromFile.read(fileByteArray);
 
-		// Start timer for calculating throughput
 		StartTime timer = new StartTime(0);
 
-		// Create a flag to indicate the last message and a 16-bit
-		// sequence number
+		// 标记报文的序列号以及是否最后一条报文
 		int sequenceNumber = 0;
 		boolean lastMessageFlag = false;
 
-		// Create a flag to indicate the last acknowledged message and a
-		// 16-bit sequence number
+		
 		int ackSequenceNumber = 0;
 		int lastAckedSequenceNumber = 0;
 		boolean lastAcknowledgedFlag = false;
 
-		// Create a counter to count number of retransmissions and
-		// initialize window size
 		int retransmissionCounter = 0;
 		int windowSize = 128;
 
@@ -61,14 +55,11 @@ public class Sender {
 		// For as each message we will create
 		for (int i = 0; i < fileByteArray.length; i = i + 1021) {
 
-			// Increment sequence number
 			sequenceNumber += 1;
 
-			// Create new byte array for message
 			byte[] message = new byte[1024];
 
-			// Set the first and second bytes of the message to the
-			// sequence number
+			// 提取序列号
 			message[0] = (byte) (sequenceNumber >> 8);
 			message[1] = (byte) (sequenceNumber);
 

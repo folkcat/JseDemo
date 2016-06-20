@@ -1,4 +1,4 @@
-package com.folkcat.demos.udp;
+package com.folkcat.demos.udptransfile;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -12,7 +12,7 @@ public class Receiver {
 	public static void main(String args[]) throws Exception {
 		System.out.println("Ready to receive the file!");
 
-		final int port=1213;
+		final int port=2000;
 		final String fileName="transfered.png";
 
 		receiveAndCreate(port, fileName);
@@ -20,8 +20,7 @@ public class Receiver {
 
 	public static void receiveAndCreate(int port, String fileName)
 			throws IOException {
-		// Create the socket, set the address and create the file to be
-		// sent
+		// 创建Socket和文件
 		DatagramSocket socket = new DatagramSocket(port);
 		InetAddress address;
 		File file = new File(fileName);
@@ -30,20 +29,19 @@ public class Receiver {
 		}
 		FileOutputStream outToFile = new FileOutputStream(file);
 
-		// Create a flag to indicate the last message
+		// 标记是否为最后一条数据报
 		boolean lastMessageFlag = false;
 
-		// Store sequence number
+		// 序列号
 		int sequenceNumber = 0;
 		int lastSequenceNumber = 0;
 
 		// For each message we will receive
 		while (!lastMessageFlag) {
-			// Create byte array for full message and another for
-			// file data without header
+			
 			byte[] message = new byte[1024];
 			byte[] fileByteArray = new byte[1021];
-			// Receive packet and retreive message
+			// 接收数据报
 			DatagramPacket receivedPacket = new DatagramPacket(
 					message, message.length);
 			socket.setSoTimeout(0);
@@ -68,7 +66,7 @@ public class Receiver {
 				lastIndex--;
 			}
 			System.out.println("最后字节下标："+lastIndex);
-			// Get port and address for sending ack
+			// 提取IP地址以确认
 			address = receivedPacket.getAddress();
 			port = receivedPacket.getPort();
 
